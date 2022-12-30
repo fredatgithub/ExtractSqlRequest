@@ -13,11 +13,11 @@ namespace ExtractSqlRequest
       Display("Application console which search all the lines of code with an SQL request in a Visual Studio solution.");
       Display("Copyright (c) MIT 2022 by Freddy Juhel");
       Display("");
-      var startPath = "..\\";
+      var startPath = "C:\\repos\\ExtractSqlRequest";
       var startDirectory = new DirectoryInfo(startPath);
       var sqlRequestResultFile = new List<string>();
-      var sqlSearchedWords = "select,insert,delete,update";
-      var codeFilePattern = "*.vb"; // "*.cs,*.vb";
+      var sqlSearchedWords = "select,insert,delete,update,drop,create,alter"; // choose less verbs if needed
+      var codeFilePattern = "*.cs"; // "*.cs,*.vb";
       foreach (var file in GetFilesFileteredBySize(startDirectory, 0, codeFilePattern, SearchOption.AllDirectories))
       {
         // we read the file
